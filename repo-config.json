@@ -2,9 +2,9 @@
   "scanSettings": {
     "configMode": "AUTO",
     "configExternalURL": "",
-    "enableLicenseViolations": "true",
+	"enableLicenseViolations": "true",
+	"enableIaC": "true",
     "projectToken": "",
-    "enableIaC": "true",
     "baseBranches": []
   },
   "checkRunSettings": {
@@ -12,11 +12,13 @@
     "displayMode": "diff"
   },
   "issueSettings": {
-    "minSeverityLevel": "LOW"
+    "minSeverityLevel": "LOW",
+    "issueType": "DEPENDENCY"
   },
   "remediateSettings": {
     "extends": ["github>whitesource/merge-confidence:beta","config:base"],
-    "dependencyDashboard": true,
-    "transitiveRemediation": true
+    "workflowRules": {
+      "enabled": true
+    }
   }
 }
